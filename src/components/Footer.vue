@@ -5,6 +5,10 @@
       <strong>
         A project by Baffour Adu Boampong. Code &amp; design licensed under MIT.
       </strong>
+      <br />
+      <a href="https://github.com/BaffourAdu/Vue-typescript-example-app">
+        View Project on Github
+      </a>
     </v-col>
   </v-footer>
 </template>
