@@ -1,12 +1,16 @@
 <template>
-  <div>
+  <header>
     <v-toolbar max-height="64">
       <v-toolbar-title>Conduit</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text>Home</v-btn>
+        <v-btn text>
+          <router-link :to="{ name: 'home' }">
+            Home
+          </router-link>
+        </v-btn>
         <v-btn text>New Post</v-btn>
         <v-btn text>Settings</v-btn>
         <v-btn text>Sign up</v-btn>
@@ -30,12 +34,16 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>
+              <router-link :to="{ name: item.route }">
+                {{ item.title }}
+              </router-link>
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">
@@ -45,10 +53,10 @@ import { Vue, Component } from "vue-property-decorator";
 export default class Header extends Vue {
   drawer: boolean = false;
   drawerNavigationItems: any[] = [
-    { title: "Home", icon: "mdi-home-outline" },
-    { title: "New Post", icon: "mdi-newspaper-plus" },
-    { title: "Settings", icon: "mdi-tune" },
-    { title: "Sign Up", icon: "mdi-account-plus-outline" }
+    { title: "Home", icon: "mdi-home-outline", route: "home" },
+    { title: "New Post", icon: "mdi-newspaper-plus", route: "home" },
+    { title: "Settings", icon: "mdi-tune", route: "home" },
+    { title: "Sign Up", icon: "mdi-account-plus-outline", route: "home" }
   ];
 }
 </script>
